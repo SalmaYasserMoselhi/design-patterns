@@ -1,4 +1,4 @@
-public class Book implements BookInterface{
+public class Book implements BookInterface {
     private String title;
     private boolean isAvailable;
 
@@ -7,16 +7,13 @@ public class Book implements BookInterface{
         this.isAvailable = true;
     }
 
-    public boolean isAvailable() {
-        return isAvailable;
-    }
-    public String getTitle() {
-        return title;
-    }
+    public boolean isAvailable() { return isAvailable; }
+    public String getTitle() { return title; }
+
     public void borrowBook(User user) {
         if (isAvailable) {
             isAvailable = false;
-            System.out.println(user.getName()+" "+title + " has been borrowed.");
+            System.out.println(user.getName() + " " + title + " has been borrowed.");
         } else {
             System.out.println(title + " is not available.");
         }
@@ -27,5 +24,7 @@ public class Book implements BookInterface{
         System.out.println(title + " has been returned.");
     }
 
-
+    public int getBorrowingDays() {
+        return 14;
+    }
 }
